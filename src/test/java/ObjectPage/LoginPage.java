@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import static org.junit.jupiter.api.Assertions.fail;
+import static org.junit.Assert.fail;
 
 public class LoginPage extends BaseController {
     private WebDriver driver;
@@ -59,7 +59,7 @@ public class LoginPage extends BaseController {
             if(this.msgUsuarioInvalido.isDisplayed()){
                 System.out.println("Mensaje de usuario inválido visible");
             }else{
-                System.out.println("Error al visualizar el mensaje de usuario inválido!");
+                fail("No se visualiza el mensaje Your username is invalid!");
             }
         }catch(Exception e){
             fail("Error al detectar el mensaje de usuario inválido: "+e.getMessage());

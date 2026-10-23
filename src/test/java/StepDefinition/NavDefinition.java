@@ -8,6 +8,11 @@ import org.junit.Assert;
 
 public class NavDefinition {
 
+    @Given("que se abre el navegador y se navega a {string}")
+    public void abrirNavegadorParaOrangeHrm(String url) throws InterruptedException {
+        abrirNavegador(url);
+    }
+
     @Given("abrir el navegador en la url {string}")
     public void abrirNavegador(String url) throws InterruptedException {
 

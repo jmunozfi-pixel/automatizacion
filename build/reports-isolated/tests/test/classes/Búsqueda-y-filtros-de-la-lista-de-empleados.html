@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - Class Búsqueda y filtros de la lista de empleados</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>Class Búsqueda y filtros de la lista de empleados</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/default-package.html">default-package</a> &gt; Búsqueda y filtros de la lista de empleados</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">3</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">3m36.15s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="tab-container">
+<ul class="tabLinks">
+<li>
+<a href="#">Tests</a>
+</li>
+<li>
+<a href="#">Standard output</a>
+</li>
+</ul>
+<div class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">Buscar empleado por nombre</td>
+<td class="success">2m58.71s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">Search employee by employee id #1</td>
+<td class="success">18.443s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">Search employee by employee id #2</td>
+<td class="success">18.998s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre id="class-stdout">
+@PIM @TC-001
+Esquema del escenario: Buscar empleado por nombre                                                                  # src/test/resources/features/orangehrm-pim.feature:19
+Driver context -&gt; Navegador:Chrome
+
+Sistema Operativo :windows 11, 10.0
+
+Navegador :Chrome
+Chrome seleccionado
+URL Actual: https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+  Dado que se abre el navegador y se navega a &quot;https://opensource-demo.orangehrmlive.com/web/index.php/auth/login&quot; # StepDefinition.NavDefinition.abrirNavegadorParaOrangeHrm(java.lang.String)
+
+    Embedding [SUCCESS] Step ScreenShots [image/png 48256 bytes]
+
+  Y que el usuario inicia sesión en OrangeHRM con el usuario &quot;Admin&quot; y la contraseña &quot;admin123&quot;                    # StepDefinition.OrangeHrmDefinition.iniciarSesion(java.lang.String,java.lang.String)
+
+    Embedding [SUCCESS] Step ScreenShots [image/png 3638 bytes]
+
+  Y que el usuario ingresa al módulo PIM                                                                           # StepDefinition.OrangeHrmDefinition.ingresarAlModuloPim()
+
+    Embedding [SUCCESS] Step ScreenShots [image/png 3638 bytes]
+
+  Cuando el usuario ingresa &quot;Amelia&quot; en el campo Nombre del empleado de PIM                                        # StepDefinition.OrangeHrmDefinition.ingresarNombreEmpleado(java.lang.String)
+
+    Embedding [SUCCESS] Step ScreenShots [image/png 84240 bytes]
+
+  Y hace clic en Buscar                                                                                            # StepDefinition.OrangeHrmDefinition.hacerClicEnBuscar()
+
+    Embedding [SUCCESS] Step ScreenShots [image/png 84538 bytes]
+
+  Entonces se deben mostrar los resultados de la búsqueda                                                          # StepDefinition.OrangeHrmDefinition.validarResultadosMostrados()
+
+    Embedding [SUCCESS] Step ScreenShots [image/png 84538 bytes]
+
+  Y cada resultado debe contener &quot;Amelia&quot;                                                                          # StepDefinition.OrangeHrmDefinition.validarNombreEnCadaResultado(java.lang.String)
+
+    Embedding [SUCCESS] Step ScreenShots [image/png 84538 bytes]
+
+
+@PIM @TC-002
+Esquema del escenario: Search employee by employee id                                                              # src/test/resources/features/orangehrm-pim.feature:29
+Driver context -&gt; Navegador:Chrome
+
+Sistema Operativo :windows 11, 10.0
+
+Navegador :Chrome
+Chrome seleccionado
+URL Actual: https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+  Dado que se abre el navegador y se navega a &quot;https://opensource-demo.orangehrmlive.com/web/index.php/auth/login&quot; # StepDefinition.NavDefinition.abrirNavegadorParaOrangeHrm(java.lang.String)
+
+    Embedding [SUCCESS] Step ScreenShots [image/png 48256 bytes]
+
+  Y que el usuario inicia sesión en OrangeHRM con el usuario &quot;Admin&quot; y la contraseña &quot;admin123&quot;                    # StepDefinition.OrangeHrmDefinition.iniciarSesion(java.lang.String,java.lang.String)
+
+    Embedding [SUCCESS] Step ScreenShots [image/png 3638 bytes]
+
+  Y que el usuario ingresa al módulo PIM                                                                           # StepDefinition.OrangeHrmDefinition.ingresarAlModuloPim()
+
+    Embedding [SUCCESS] Step ScreenShots [image/png 3638 bytes]
+
+  Cuando the user enters employee id &quot;0001&quot;                                                                        # StepDefinition.OrangeHrmDefinition.ingresarIdEmpleado(java.lang.String)
+
+    Embedding [SUCCESS] Step ScreenShots [image/png 87613 bytes]
+
+  Y clicks Search                                                                                                  # StepDefinition.OrangeHrmDefinition.hacerClicEnSearch()
+
+    Embedding [SUCCESS] Step ScreenShots [image/png 85036 bytes]
+
+  Entonces the system should return &quot;1&quot; record(s)                                                                  # StepDefinition.OrangeHrmDefinition.validarCantidadDeResultados(java.lang.String)
+
+    Embedding [SUCCESS] Step ScreenShots [image/png 85036 bytes]
+
+
+@PIM @TC-002
+Esquema del escenario: Search employee by employee id                                                              # src/test/resources/features/orangehrm-pim.feature:30
+Driver context -&gt; Navegador:Chrome
+
+Sistema Operativo :windows 11, 10.0
+
+Navegador :Chrome
+Chrome seleccionado
+URL Actual: https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+  Dado que se abre el navegador y se navega a &quot;https://opensource-demo.orangehrmlive.com/web/index.php/auth/login&quot; # StepDefinition.NavDefinition.abrirNavegadorParaOrangeHrm(java.lang.String)
+
+    Embedding [SUCCESS] Step ScreenShots [image/png 48256 bytes]
+
+  Y que el usuario inicia sesión en OrangeHRM con el usuario &quot;Admin&quot; y la contraseña &quot;admin123&quot;                    # StepDefinition.OrangeHrmDefinition.iniciarSesion(java.lang.String,java.lang.String)
+
+    Embedding [SUCCESS] Step ScreenShots [image/png 3638 bytes]
+
+  Y que el usuario ingresa al módulo PIM                                                                           # StepDefinition.OrangeHrmDefinition.ingresarAlModuloPim()
+
+    Embedding [SUCCESS] Step ScreenShots [image/png 3638 bytes]
+
+  Cuando the user enters employee id &quot;999999&quot;                                                                      # StepDefinition.OrangeHrmDefinition.ingresarIdEmpleado(java.lang.String)
+
+    Embedding [SUCCESS] Step ScreenShots [image/png 87879 bytes]
+
+  Y clicks Search                                                                                                  # StepDefinition.OrangeHrmDefinition.hacerClicEnSearch()
+
+    Embedding [SUCCESS] Step ScreenShots [image/png 88724 bytes]
+
+  Entonces the system should return &quot;0&quot; record(s)                                                                  # StepDefinition.OrangeHrmDefinition.validarCantidadDeResultados(java.lang.String)
+
+    Embedding [SUCCESS] Step ScreenShots [image/png 90882 bytes]
+
+</pre>
+<button class="clipboard-copy-btn" aria-label="Copy to clipboard" data-copy-element-id="class-stdout">Copy</button>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="https://www.gradle.org">Gradle 9.2.0</a> at 20-10-2026 12:00:55</p>
+</div>
+</div>
+</body>
+</html>

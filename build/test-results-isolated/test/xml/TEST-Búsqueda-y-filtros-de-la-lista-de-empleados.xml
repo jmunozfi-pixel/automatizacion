@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Búsqueda y filtros de la lista de empleados" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-10-20T14:57:18.729Z" hostname="CL-5CD152465M" time="216.153">
+  <properties/>
+  <testcase name="Buscar empleado por nombre" classname="Búsqueda y filtros de la lista de empleados" time="178.712"/>
+  <testcase name="Search employee by employee id #1" classname="Búsqueda y filtros de la lista de empleados" time="18.443"/>
+  <testcase name="Search employee by employee id #2" classname="Búsqueda y filtros de la lista de empleados" time="18.998"/>
+  <system-out><![CDATA[
+@PIM @TC-001
+Esquema del escenario: Buscar empleado por nombre                                                                  # src/test/resources/features/orangehrm-pim.feature:19
+Driver context -> Navegador:Chrome
+
+Sistema Operativo :windows 11, 10.0
+
+Navegador :Chrome
+Chrome seleccionado
+URL Actual: https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+  Dado que se abre el navegador y se navega a "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login" # StepDefinition.NavDefinition.abrirNavegadorParaOrangeHrm(java.lang.String)
+
+    Embedding [SUCCESS] Step ScreenShots [image/png 48256 bytes]
+
+  Y que el usuario inicia sesión en OrangeHRM con el usuario "Admin" y la contraseña "admin123"                    # StepDefinition.OrangeHrmDefinition.iniciarSesion(java.lang.String,java.lang.String)
+
+    Embedding [SUCCESS] Step ScreenShots [image/png 3638 bytes]
+
+  Y que el usuario ingresa al módulo PIM                                                                           # StepDefinition.OrangeHrmDefinition.ingresarAlModuloPim()
+
+    Embedding [SUCCESS] Step ScreenShots [image/png 3638 bytes]
+
+  Cuando el usuario ingresa "Amelia" en el campo Nombre del empleado de PIM                                        # StepDefinition.OrangeHrmDefinition.ingresarNombreEmpleado(java.lang.String)
+
+    Embedding [SUCCESS] Step ScreenShots [image/png 84240 bytes]
+
+  Y hace clic en Buscar                                                                                            # StepDefinition.OrangeHrmDefinition.hacerClicEnBuscar()
+
+    Embedding [SUCCESS] Step ScreenShots [image/png 84538 bytes]
+
+  Entonces se deben mostrar los resultados de la búsqueda                                                          # StepDefinition.OrangeHrmDefinition.validarResultadosMostrados()
+
+    Embedding [SUCCESS] Step ScreenShots [image/png 84538 bytes]
+
+  Y cada resultado debe contener "Amelia"                                                                          # StepDefinition.OrangeHrmDefinition.validarNombreEnCadaResultado(java.lang.String)
+
+    Embedding [SUCCESS] Step ScreenShots [image/png 84538 bytes]
+
+
+@PIM @TC-002
+Esquema del escenario: Search employee by employee id                                                              # src/test/resources/features/orangehrm-pim.feature:29
+Driver context -> Navegador:Chrome
+
+Sistema Operativo :windows 11, 10.0
+
+Navegador :Chrome
+Chrome seleccionado
+URL Actual: https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+  Dado que se abre el navegador y se navega a "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login" # StepDefinition.NavDefinition.abrirNavegadorParaOrangeHrm(java.lang.String)
+
+    Embedding [SUCCESS] Step ScreenShots [image/png 48256 bytes]
+
+  Y que el usuario inicia sesión en OrangeHRM con el usuario "Admin" y la contraseña "admin123"                    # StepDefinition.OrangeHrmDefinition.iniciarSesion(java.lang.String,java.lang.String)
+
+    Embedding [SUCCESS] Step ScreenShots [image/png 3638 bytes]
+
+  Y que el usuario ingresa al módulo PIM                                                                           # StepDefinition.OrangeHrmDefinition.ingresarAlModuloPim()
+
+    Embedding [SUCCESS] Step ScreenShots [image/png 3638 bytes]
+
+  Cuando the user enters employee id "0001"                                                                        # StepDefinition.OrangeHrmDefinition.ingresarIdEmpleado(java.lang.String)
+
+    Embedding [SUCCESS] Step ScreenShots [image/png 87613 bytes]
+
+  Y clicks Search                                                                                                  # StepDefinition.OrangeHrmDefinition.hacerClicEnSearch()
+
+    Embedding [SUCCESS] Step ScreenShots [image/png 85036 bytes]
+
+  Entonces the system should return "1" record(s)                                                                  # StepDefinition.OrangeHrmDefinition.validarCantidadDeResultados(java.lang.String)
+
+    Embedding [SUCCESS] Step ScreenShots [image/png 85036 bytes]
+
+
+@PIM @TC-002
+Esquema del escenario: Search employee by employee id                                                              # src/test/resources/features/orangehrm-pim.feature:30
+Driver context -> Navegador:Chrome
+
+Sistema Operativo :windows 11, 10.0
+
+Navegador :Chrome
+Chrome seleccionado
+URL Actual: https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+  Dado que se abre el navegador y se navega a "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login" # StepDefinition.NavDefinition.abrirNavegadorParaOrangeHrm(java.lang.String)
+
+    Embedding [SUCCESS] Step ScreenShots [image/png 48256 bytes]
+
+  Y que el usuario inicia sesión en OrangeHRM con el usuario "Admin" y la contraseña "admin123"                    # StepDefinition.OrangeHrmDefinition.iniciarSesion(java.lang.String,java.lang.String)
+
+    Embedding [SUCCESS] Step ScreenShots [image/png 3638 bytes]
+
+  Y que el usuario ingresa al módulo PIM                                                                           # StepDefinition.OrangeHrmDefinition.ingresarAlModuloPim()
+
+    Embedding [SUCCESS] Step ScreenShots [image/png 3638 bytes]
+
+  Cuando the user enters employee id "999999"                                                                      # StepDefinition.OrangeHrmDefinition.ingresarIdEmpleado(java.lang.String)
+
+    Embedding [SUCCESS] Step ScreenShots [image/png 87879 bytes]
+
+  Y clicks Search                                                                                                  # StepDefinition.OrangeHrmDefinition.hacerClicEnSearch()
+
+    Embedding [SUCCESS] Step ScreenShots [image/png 88724 bytes]
+
+  Entonces the system should return "0" record(s)                                                                  # StepDefinition.OrangeHrmDefinition.validarCantidadDeResultados(java.lang.String)
+
+    Embedding [SUCCESS] Step ScreenShots [image/png 90882 bytes]
+
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,178 @@
+
+@PIM @TC-005
+´Esquema del escenario: Search employees using all available PIM filters                                            # src/test/resources/features/orangehrm-pim.feature:73
+$Driver context -> Navegador:Chrome
+
+%Sistema Operativo :windows 11, 10.0
+
+Navegador :Chrome
+Chrome seleccionado
+PURL Actual: https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+¡  Dado que se abre el navegador y se navega a "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login" # StepDefinition.NavDefinition.abrirNavegadorParaOrangeHrm(java.lang.String)
+
+B    Embedding [SUCCESS] Step ScreenShots [image/png 48256 bytes]
+
+Ã  Y que el usuario inicia sesi√≥n en OrangeHRM con el usuario "Admin" y la contrase√±a "admin123"                    # StepDefinition.OrangeHrmDefinition.iniciarSesion(java.lang.String,java.lang.String)
+
+A    Embedding [SUCCESS] Step ScreenShots [image/png 3638 bytes]
+
+∞  Y que el usuario ingresa al m√≥dulo PIM                                                                           # StepDefinition.OrangeHrmDefinition.ingresarAlModuloPim()
+
+B    Embedding [SUCCESS] Step ScreenShots [image/png 84390 bytes]
+
+—  Cuando the user enters employee name for combined filters "Amelia"                                               # StepDefinition.OrangeHrmDefinition.ingresarNombreEmpleadoParaCombinacion(java.lang.String)
+
+B    Embedding [SUCCESS] Step ScreenShots [image/png 84188 bytes]
+
+æ  Y the user enters employee id "0001"                                                                             # StepDefinition.OrangeHrmDefinition.ingresarIdEmpleado(java.lang.String)
+
+B    Embedding [SUCCESS] Step ScreenShots [image/png 87463 bytes]
+
+”  Y the user selects employment status for combined filters "Full-Time Permanent"                                  # StepDefinition.OrangeHrmDefinition.seleccionarEstadoLaboralParaCombinacion(java.lang.String)
+
+B    Embedding [SUCCESS] Step ScreenShots [image/png 84645 bytes]
+
+”  Y the user selects include option for combined filters "Current Employees Only"                                  # StepDefinition.OrangeHrmDefinition.seleccionarOpcionIncludeParaCombinacion(java.lang.String)
+
+B    Embedding [SUCCESS] Step ScreenShots [image/png 84645 bytes]
+
+”  Y the user selects job title for combined filters "Account Assistant"                                            # StepDefinition.OrangeHrmDefinition.seleccionarTituloTrabajoParaCombinacion(java.lang.String)
+
+B    Embedding [SUCCESS] Step ScreenShots [image/png 85353 bytes]
+
+œ  Y the user selects sub unit for combined filters "Administration"                                                # StepDefinition.OrangeHrmDefinition.seleccionarSubUnidadParaCombinacion(java.lang.String)
+
+B    Embedding [SUCCESS] Step ScreenShots [image/png 85661 bytes]
+
+–  Y the user selects supervisor for combined filters "John Smith"                                                  # StepDefinition.OrangeHrmDefinition.seleccionarSupervisorParaCombinacion(java.lang.String)
+
+B    Embedding [SUCCESS] Step ScreenShots [image/png 87161 bytes]
+
+≠  Y clicks Search                                                                                                  # StepDefinition.OrangeHrmDefinition.hacerClicEnSearch()
+
+B    Embedding [SUCCESS] Step ScreenShots [image/png 87375 bytes]
+
+eNo se encontr√≥ la combinaci√≥n de filtros probados. Valores inexistentes: Supervisor='John Smith'.
+¡  Entonces every result should match all selected criteria                                                         # StepDefinition.OrangeHrmDefinition.validarTodosLosCriteriosSeleccionados()
+
+B    Embedding [SUCCESS] Step ScreenShots [image/png 87375 bytes]
+
+
+@PIM @TC-005
+´Esquema del escenario: Search employees using all available PIM filters                                            # src/test/resources/features/orangehrm-pim.feature:74
+$Driver context -> Navegador:Chrome
+
+%Sistema Operativo :windows 11, 10.0
+
+Navegador :Chrome
+Chrome seleccionado
+PURL Actual: https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+¡  Dado que se abre el navegador y se navega a "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login" # StepDefinition.NavDefinition.abrirNavegadorParaOrangeHrm(java.lang.String)
+
+B    Embedding [SUCCESS] Step ScreenShots [image/png 48256 bytes]
+
+Ã  Y que el usuario inicia sesi√≥n en OrangeHRM con el usuario "Admin" y la contrase√±a "admin123"                    # StepDefinition.OrangeHrmDefinition.iniciarSesion(java.lang.String,java.lang.String)
+
+A    Embedding [SUCCESS] Step ScreenShots [image/png 3638 bytes]
+
+∞  Y que el usuario ingresa al m√≥dulo PIM                                                                           # StepDefinition.OrangeHrmDefinition.ingresarAlModuloPim()
+
+B    Embedding [SUCCESS] Step ScreenShots [image/png 84390 bytes]
+
+—  Cuando the user enters employee name for combined filters "James"                                                # StepDefinition.OrangeHrmDefinition.ingresarNombreEmpleadoParaCombinacion(java.lang.String)
+
+B    Embedding [SUCCESS] Step ScreenShots [image/png 84010 bytes]
+
+æ  Y the user enters employee id "0002"                                                                             # StepDefinition.OrangeHrmDefinition.ingresarIdEmpleado(java.lang.String)
+
+B    Embedding [SUCCESS] Step ScreenShots [image/png 87315 bytes]
+
+”  Y the user selects employment status for combined filters "Full-Time Contract"                                   # StepDefinition.OrangeHrmDefinition.seleccionarEstadoLaboralParaCombinacion(java.lang.String)
+
+B    Embedding [SUCCESS] Step ScreenShots [image/png 84603 bytes]
+
+”  Y the user selects include option for combined filters "Current and Past Employees"                              # StepDefinition.OrangeHrmDefinition.seleccionarOpcionIncludeParaCombinacion(java.lang.String)
+
+B    Embedding [SUCCESS] Step ScreenShots [image/png 84634 bytes]
+
+”  Y the user selects job title for combined filters "Automation Engineer L000"                                     # StepDefinition.OrangeHrmDefinition.seleccionarTituloTrabajoParaCombinacion(java.lang.String)
+
+B    Embedding [SUCCESS] Step ScreenShots [image/png 84634 bytes]
+
+œ  Y the user selects sub unit for combined filters "Engineering"                                                   # StepDefinition.OrangeHrmDefinition.seleccionarSubUnidadParaCombinacion(java.lang.String)
+
+B    Embedding [SUCCESS] Step ScreenShots [image/png 84856 bytes]
+
+–  Y the user selects supervisor for combined filters "Peter Anderson"                                              # StepDefinition.OrangeHrmDefinition.seleccionarSupervisorParaCombinacion(java.lang.String)
+
+B    Embedding [SUCCESS] Step ScreenShots [image/png 86771 bytes]
+
+≠  Y clicks Search                                                                                                  # StepDefinition.OrangeHrmDefinition.hacerClicEnSearch()
+
+B    Embedding [SUCCESS] Step ScreenShots [image/png 86985 bytes]
+
+èNo se encontr√≥ la combinaci√≥n de filtros probados. Valores inexistentes: Job Title='Automation Engineer L000', Supervisor='Peter Anderson'.
+¡  Entonces every result should match all selected criteria                                                         # StepDefinition.OrangeHrmDefinition.validarTodosLosCriteriosSeleccionados()
+
+B    Embedding [SUCCESS] Step ScreenShots [image/png 86985 bytes]
+
+
+@PIM @TC-005
+´Esquema del escenario: Search employees using all available PIM filters                                            # src/test/resources/features/orangehrm-pim.feature:75
+$Driver context -> Navegador:Chrome
+
+%Sistema Operativo :windows 11, 10.0
+
+Navegador :Chrome
+Chrome seleccionado
+PURL Actual: https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+¡  Dado que se abre el navegador y se navega a "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login" # StepDefinition.NavDefinition.abrirNavegadorParaOrangeHrm(java.lang.String)
+
+B    Embedding [SUCCESS] Step ScreenShots [image/png 48256 bytes]
+
+Ã  Y que el usuario inicia sesi√≥n en OrangeHRM con el usuario "Admin" y la contrase√±a "admin123"                    # StepDefinition.OrangeHrmDefinition.iniciarSesion(java.lang.String,java.lang.String)
+
+A    Embedding [SUCCESS] Step ScreenShots [image/png 3638 bytes]
+
+∞  Y que el usuario ingresa al m√≥dulo PIM                                                                           # StepDefinition.OrangeHrmDefinition.ingresarAlModuloPim()
+
+B    Embedding [SUCCESS] Step ScreenShots [image/png 84390 bytes]
+
+—  Cuando the user enters employee name for combined filters "Linda"                                                # StepDefinition.OrangeHrmDefinition.ingresarNombreEmpleadoParaCombinacion(java.lang.String)
+
+B    Embedding [SUCCESS] Step ScreenShots [image/png 83646 bytes]
+
+æ  Y the user enters employee id "0003"                                                                             # StepDefinition.OrangeHrmDefinition.ingresarIdEmpleado(java.lang.String)
+
+B    Embedding [SUCCESS] Step ScreenShots [image/png 86954 bytes]
+
+”  Y the user selects employment status for combined filters "Part-Time Contract"                                   # StepDefinition.OrangeHrmDefinition.seleccionarEstadoLaboralParaCombinacion(java.lang.String)
+
+B    Embedding [SUCCESS] Step ScreenShots [image/png 84571 bytes]
+
+”  Y the user selects include option for combined filters "Past Employees Only"                                     # StepDefinition.OrangeHrmDefinition.seleccionarOpcionIncludeParaCombinacion(java.lang.String)
+
+B    Embedding [SUCCESS] Step ScreenShots [image/png 84509 bytes]
+
+”  Y the user selects job title for combined filters "Automation Tester"                                            # StepDefinition.OrangeHrmDefinition.seleccionarTituloTrabajoParaCombinacion(java.lang.String)
+
+B    Embedding [SUCCESS] Step ScreenShots [image/png 84509 bytes]
+
+œ  Y the user selects sub unit for combined filters "Development"                                                   # StepDefinition.OrangeHrmDefinition.seleccionarSubUnidadParaCombinacion(java.lang.String)
+
+B    Embedding [SUCCESS] Step ScreenShots [image/png 84751 bytes]
+
+–  Y the user selects supervisor for combined filters "Linda Brown"                                                 # StepDefinition.OrangeHrmDefinition.seleccionarSupervisorParaCombinacion(java.lang.String)
+
+B    Embedding [SUCCESS] Step ScreenShots [image/png 86525 bytes]
+
+≠  Y clicks Search                                                                                                  # StepDefinition.OrangeHrmDefinition.hacerClicEnSearch()
+
+B    Embedding [SUCCESS] Step ScreenShots [image/png 86738 bytes]
+
+úNo se encontr√≥ la combinaci√≥n de filtros probados. Valores inexistentes: Employee Name='Linda', Job Title='Automation Tester', Supervisor='Linda Brown'.
+¡  Entonces every result should match all selected criteria                                                         # StepDefinition.OrangeHrmDefinition.validarTodosLosCriteriosSeleccionados()
+
+B    Embedding [SUCCESS] Step ScreenShots [image/png 86738 bytes]
+
+ Automation exit code: 0
