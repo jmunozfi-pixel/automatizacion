@@ -1,6 +1,6 @@
 
-@PIM @TC-005
-´Esquema del escenario: Search employees using all available PIM filters                                            # src/test/resources/features/orangehrm-pim.feature:73
+@LEAVE @TLEAVE-001
+§Esquema del escenario: Validar b√∫squeda de solicitudes con filtros combinados                                      # src/test/resources/features/leave.feature:42
 $Driver context -> Navegador:Chrome
 
 %Sistema Operativo :windows 11, 10.0
@@ -16,50 +16,74 @@
 
 A    Embedding [SUCCESS] Step ScreenShots [image/png 3638 bytes]
 
-∞  Y que el usuario ingresa al m√≥dulo PIM                                                                           # StepDefinition.OrangeHrmDefinition.ingresarAlModuloPim()
+≤  Y que el usuario ingresa al m√≥dulo LEAVE                                                                         # StepDefinition.StepDefinitionLeave.ingresarAlModuloLeave()
 
-B    Embedding [SUCCESS] Step ScreenShots [image/png 84390 bytes]
+A    Embedding [SUCCESS] Step ScreenShots [image/png 3638 bytes]
 
-—  Cuando the user enters employee name for combined filters "Amelia"                                               # StepDefinition.OrangeHrmDefinition.ingresarNombreEmpleadoParaCombinacion(java.lang.String)
+BNo existen solicitudes de vacaciones para ejecutar la b√∫squeda.
+∏  Dado que existen solicitudes de vacaciones                                                                       # StepDefinition.StepDefinitionLeave.validarSolicitudesExistentes()
 
-B    Embedding [SUCCESS] Step ScreenShots [image/png 84188 bytes]
+B    Embedding [SUCCESS] Step ScreenShots [image/png 97574 bytes]
 
-æ  Y the user enters employee id "0001"                                                                             # StepDefinition.OrangeHrmDefinition.ingresarIdEmpleado(java.lang.String)
+¬  Y el usuario se encuentra en "Leave List"                                                                        # StepDefinition.StepDefinitionLeave.abrirSeccionSolicitada(java.lang.String)
 
-B    Embedding [SUCCESS] Step ScreenShots [image/png 87463 bytes]
+B    Embedding [SUCCESS] Step ScreenShots [image/png 97009 bytes]
 
-”  Y the user selects employment status for combined filters "Full-Time Permanent"                                  # StepDefinition.OrangeHrmDefinition.seleccionarEstadoLaboralParaCombinacion(java.lang.String)
+¿  Cuando ingresa la fecha inicial "2026-01-01"                                                                     # StepDefinition.StepDefinitionLeave.ingresarFechaInicial(java.lang.String)
 
-B    Embedding [SUCCESS] Step ScreenShots [image/png 84645 bytes]
+C    Embedding [SUCCESS] Step ScreenShots [image/png 110001 bytes]
 
-”  Y the user selects include option for combined filters "Current Employees Only"                                  # StepDefinition.OrangeHrmDefinition.seleccionarOpcionIncludeParaCombinacion(java.lang.String)
+æ  Y ingresa la fecha final "2026-12-31"                                                                            # StepDefinition.StepDefinitionLeave.ingresarFechaFinal(java.lang.String)
 
-B    Embedding [SUCCESS] Step ScreenShots [image/png 84645 bytes]
+C    Embedding [SUCCESS] Step ScreenShots [image/png 112095 bytes]
 
-”  Y the user selects job title for combined filters "Account Assistant"                                            # StepDefinition.OrangeHrmDefinition.seleccionarTituloTrabajoParaCombinacion(java.lang.String)
+Ω  Y selecciona el estado "Pending Approval"                                                                        # StepDefinition.StepDefinitionLeave.seleccionarEstado(java.lang.String)
 
-B    Embedding [SUCCESS] Step ScreenShots [image/png 85353 bytes]
+B    Embedding [SUCCESS] Step ScreenShots [image/png 97009 bytes]
 
-œ  Y the user selects sub unit for combined filters "Administration"                                                # StepDefinition.OrangeHrmDefinition.seleccionarSubUnidadParaCombinacion(java.lang.String)
+¬  Y ingresa el nombre del empleado "QA Employee 01"                                                                # StepDefinition.StepDefinitionLeave.ingresarNombreEmpleado(java.lang.String)
 
-B    Embedding [SUCCESS] Step ScreenShots [image/png 85661 bytes]
+B    Embedding [SUCCESS] Step ScreenShots [image/png 99033 bytes]
 
-–  Y the user selects supervisor for combined filters "John Smith"                                                  # StepDefinition.OrangeHrmDefinition.seleccionarSupervisorParaCombinacion(java.lang.String)
+DNo se encontr√≥ el empleado 'QA Employee 01' en el autocompletado.
+ÇNo se pudo seleccionar el empleado 'QA Employee 01' en el autocompletado. Se contin√∫a con la validaci√≥n de resultados vac√≠os.
+Ω  Y selecciona al empleado desde el autocompletado                                                                 # StepDefinition.StepDefinitionLeave.seleccionarEmpleadoAutocompletado()
 
-B    Embedding [SUCCESS] Step ScreenShots [image/png 87161 bytes]
+B    Embedding [SUCCESS] Step ScreenShots [image/png 93113 bytes]
 
-≠  Y clicks Search                                                                                                  # StepDefinition.OrangeHrmDefinition.hacerClicEnSearch()
+Ω  Y selecciona la unidad "Engineering"                                                                             # StepDefinition.StepDefinitionLeave.seleccionarUnidad(java.lang.String)
 
-B    Embedding [SUCCESS] Step ScreenShots [image/png 87375 bytes]
+B    Embedding [SUCCESS] Step ScreenShots [image/png 91622 bytes]
 
-eNo se encontr√≥ la combinaci√≥n de filtros probados. Valores inexistentes: Supervisor='John Smith'.
-¡  Entonces every result should match all selected criteria                                                         # StepDefinition.OrangeHrmDefinition.validarTodosLosCriteriosSeleccionados()
+AEl filtro Include Past Employees no est√° marcado en esta vista
+…  Y configura empleados anteriores en "No"                                                                         # StepDefinition.StepDefinitionLeave.configurarEmpleadosAnteriores(java.lang.String)
 
-B    Embedding [SUCCESS] Step ScreenShots [image/png 87375 bytes]
+B    Embedding [SUCCESS] Step ScreenShots [image/png 91622 bytes]
 
+INo se ejecuta la b√∫squeda porque no existen solicitudes de vacaciones.
+ª  Y presiona el bot√≥n "Search"                                                                                     # StepDefinition.StepDefinitionLeave.presionarBoton(java.lang.String)
+o      org.junit.AssumptionViolatedException: No existen solicitudes de vacaciones para ejecutar la b√∫squeda.
+U	at StepDefinition.StepDefinitionLeave.presionarBoton(StepDefinitionLeave.java:122)
+s	at ‚úΩ.presiona el bot√≥n "Search"(file:///C:/simpleTestAutomation/src/test/resources/features/leave.feature:24)
+
+
+B    Embedding [SUCCESS] Step ScreenShots [image/png 91622 bytes]
+
+∂  Entonces se debe completar la b√∫squeda sin errores                                                               # StepDefinition.StepDefinitionLeave.validarBusquedaSinErrores()
+¥  Y se debe visualizar la tabla de resultados                                                                      # StepDefinition.StepDefinitionLeave.validarTablaDeResultados()
+»  Y las solicitudes deben corresponder al empleado "QA Employee 01"                                                # StepDefinition.StepDefinitionLeave.validarEmpleadoEnSolicitudes(java.lang.String)
+∆  Y las solicitudes deben cumplir el estado "Pending Approval"                                                     # StepDefinition.StepDefinitionLeave.validarEstadoEnSolicitudes(java.lang.String)
+∏  Y las solicitudes deben estar dentro del per√≠odo consultado                                                      # StepDefinition.StepDefinitionLeave.validarPeriodoDeSolicitudes()
+∆  Y las solicitudes deben corresponder a la unidad "Engineering"                                                   # StepDefinition.StepDefinitionLeave.validarUnidadEnSolicitudes(java.lang.String)
+º  Y los registros deben respetar el filtro de empleados anteriores                                                 # StepDefinition.StepDefinitionLeave.validarFiltroEmpleadosAnteriores()
+∏  Y no deben existir registros duplicados                                                                          # StepDefinition.StepDefinitionLeave.validarRegistrosNoDuplicados()
+≥  Y todas las p√°ginas deben respetar los filtros aplicados                                                         # StepDefinition.StepDefinitionLeave.validarTodasLasPaginas()
+¿  Cuando el usuario presiona el bot√≥n "Reset"                                                                      # StepDefinition.StepDefinitionLeave.presionarBotonReset(java.lang.String)
+π  Entonces los filtros deben recuperar sus valores predeterminados                                                 # StepDefinition.StepDefinitionLeave.validarValoresPredeterminados()
+∂  Y no deben permanecer los criterios ingresados anteriormente                                                     # StepDefinition.StepDefinitionLeave.validarCriteriosEliminados()
 
-@PIM @TC-005
-´Esquema del escenario: Search employees using all available PIM filters                                            # src/test/resources/features/orangehrm-pim.feature:74
+@LEAVE @TLEAVE-001
+§Esquema del escenario: Validar b√∫squeda de solicitudes con filtros combinados                                      # src/test/resources/features/leave.feature:43
 $Driver context -> Navegador:Chrome
 
 %Sistema Operativo :windows 11, 10.0
@@ -75,50 +99,74 @@
 
 A    Embedding [SUCCESS] Step ScreenShots [image/png 3638 bytes]
 
-∞  Y que el usuario ingresa al m√≥dulo PIM                                                                           # StepDefinition.OrangeHrmDefinition.ingresarAlModuloPim()
+≤  Y que el usuario ingresa al m√≥dulo LEAVE                                                                         # StepDefinition.StepDefinitionLeave.ingresarAlModuloLeave()
 
-B    Embedding [SUCCESS] Step ScreenShots [image/png 84390 bytes]
+A    Embedding [SUCCESS] Step ScreenShots [image/png 3638 bytes]
 
-—  Cuando the user enters employee name for combined filters "James"                                                # StepDefinition.OrangeHrmDefinition.ingresarNombreEmpleadoParaCombinacion(java.lang.String)
+BNo existen solicitudes de vacaciones para ejecutar la b√∫squeda.
+∏  Dado que existen solicitudes de vacaciones                                                                       # StepDefinition.StepDefinitionLeave.validarSolicitudesExistentes()
 
-B    Embedding [SUCCESS] Step ScreenShots [image/png 84010 bytes]
+B    Embedding [SUCCESS] Step ScreenShots [image/png 92167 bytes]
 
-æ  Y the user enters employee id "0002"                                                                             # StepDefinition.OrangeHrmDefinition.ingresarIdEmpleado(java.lang.String)
+¬  Y el usuario se encuentra en "Leave List"                                                                        # StepDefinition.StepDefinitionLeave.abrirSeccionSolicitada(java.lang.String)
 
-B    Embedding [SUCCESS] Step ScreenShots [image/png 87315 bytes]
+B    Embedding [SUCCESS] Step ScreenShots [image/png 94275 bytes]
 
-”  Y the user selects employment status for combined filters "Full-Time Contract"                                   # StepDefinition.OrangeHrmDefinition.seleccionarEstadoLaboralParaCombinacion(java.lang.String)
+¿  Cuando ingresa la fecha inicial "2026-01-01"                                                                     # StepDefinition.StepDefinitionLeave.ingresarFechaInicial(java.lang.String)
 
-B    Embedding [SUCCESS] Step ScreenShots [image/png 84603 bytes]
+C    Embedding [SUCCESS] Step ScreenShots [image/png 109194 bytes]
 
-”  Y the user selects include option for combined filters "Current and Past Employees"                              # StepDefinition.OrangeHrmDefinition.seleccionarOpcionIncludeParaCombinacion(java.lang.String)
+æ  Y ingresa la fecha final "2026-12-31"                                                                            # StepDefinition.StepDefinitionLeave.ingresarFechaFinal(java.lang.String)
 
-B    Embedding [SUCCESS] Step ScreenShots [image/png 84634 bytes]
+C    Embedding [SUCCESS] Step ScreenShots [image/png 112319 bytes]
 
-”  Y the user selects job title for combined filters "Automation Engineer L000"                                     # StepDefinition.OrangeHrmDefinition.seleccionarTituloTrabajoParaCombinacion(java.lang.String)
+Ω  Y selecciona el estado "Scheduled"                                                                               # StepDefinition.StepDefinitionLeave.seleccionarEstado(java.lang.String)
 
-B    Embedding [SUCCESS] Step ScreenShots [image/png 84634 bytes]
+B    Embedding [SUCCESS] Step ScreenShots [image/png 97839 bytes]
 
-œ  Y the user selects sub unit for combined filters "Engineering"                                                   # StepDefinition.OrangeHrmDefinition.seleccionarSubUnidadParaCombinacion(java.lang.String)
+¬  Y ingresa el nombre del empleado "QA Employee 02"                                                                # StepDefinition.StepDefinitionLeave.ingresarNombreEmpleado(java.lang.String)
 
-B    Embedding [SUCCESS] Step ScreenShots [image/png 84856 bytes]
+B    Embedding [SUCCESS] Step ScreenShots [image/png 99982 bytes]
 
-–  Y the user selects supervisor for combined filters "Peter Anderson"                                              # StepDefinition.OrangeHrmDefinition.seleccionarSupervisorParaCombinacion(java.lang.String)
+DNo se encontr√≥ el empleado 'QA Employee 02' en el autocompletado.
+ÇNo se pudo seleccionar el empleado 'QA Employee 02' en el autocompletado. Se contin√∫a con la validaci√≥n de resultados vac√≠os.
+Ω  Y selecciona al empleado desde el autocompletado                                                                 # StepDefinition.StepDefinitionLeave.seleccionarEmpleadoAutocompletado()
 
-B    Embedding [SUCCESS] Step ScreenShots [image/png 86771 bytes]
+B    Embedding [SUCCESS] Step ScreenShots [image/png 94093 bytes]
 
-≠  Y clicks Search                                                                                                  # StepDefinition.OrangeHrmDefinition.hacerClicEnSearch()
+Ω  Y selecciona la unidad "Engineering"                                                                             # StepDefinition.StepDefinitionLeave.seleccionarUnidad(java.lang.String)
 
-B    Embedding [SUCCESS] Step ScreenShots [image/png 86985 bytes]
+B    Embedding [SUCCESS] Step ScreenShots [image/png 92601 bytes]
 
-èNo se encontr√≥ la combinaci√≥n de filtros probados. Valores inexistentes: Job Title='Automation Engineer L000', Supervisor='Peter Anderson'.
-¡  Entonces every result should match all selected criteria                                                         # StepDefinition.OrangeHrmDefinition.validarTodosLosCriteriosSeleccionados()
+AEl filtro Include Past Employees no est√° marcado en esta vista
+…  Y configura empleados anteriores en "No"                                                                         # StepDefinition.StepDefinitionLeave.configurarEmpleadosAnteriores(java.lang.String)
 
-B    Embedding [SUCCESS] Step ScreenShots [image/png 86985 bytes]
+B    Embedding [SUCCESS] Step ScreenShots [image/png 92601 bytes]
 
+INo se ejecuta la b√∫squeda porque no existen solicitudes de vacaciones.
+ª  Y presiona el bot√≥n "Search"                                                                                     # StepDefinition.StepDefinitionLeave.presionarBoton(java.lang.String)
+o      org.junit.AssumptionViolatedException: No existen solicitudes de vacaciones para ejecutar la b√∫squeda.
+U	at StepDefinition.StepDefinitionLeave.presionarBoton(StepDefinitionLeave.java:122)
+s	at ‚úΩ.presiona el bot√≥n "Search"(file:///C:/simpleTestAutomation/src/test/resources/features/leave.feature:24)
+
+
+B    Embedding [SUCCESS] Step ScreenShots [image/png 92601 bytes]
+
+∂  Entonces se debe completar la b√∫squeda sin errores                                                               # StepDefinition.StepDefinitionLeave.validarBusquedaSinErrores()
+¥  Y se debe visualizar la tabla de resultados                                                                      # StepDefinition.StepDefinitionLeave.validarTablaDeResultados()
+»  Y las solicitudes deben corresponder al empleado "QA Employee 02"                                                # StepDefinition.StepDefinitionLeave.validarEmpleadoEnSolicitudes(java.lang.String)
+∆  Y las solicitudes deben cumplir el estado "Scheduled"                                                            # StepDefinition.StepDefinitionLeave.validarEstadoEnSolicitudes(java.lang.String)
+∏  Y las solicitudes deben estar dentro del per√≠odo consultado                                                      # StepDefinition.StepDefinitionLeave.validarPeriodoDeSolicitudes()
+∆  Y las solicitudes deben corresponder a la unidad "Engineering"                                                   # StepDefinition.StepDefinitionLeave.validarUnidadEnSolicitudes(java.lang.String)
+º  Y los registros deben respetar el filtro de empleados anteriores                                                 # StepDefinition.StepDefinitionLeave.validarFiltroEmpleadosAnteriores()
+∏  Y no deben existir registros duplicados                                                                          # StepDefinition.StepDefinitionLeave.validarRegistrosNoDuplicados()
+≥  Y todas las p√°ginas deben respetar los filtros aplicados                                                         # StepDefinition.StepDefinitionLeave.validarTodasLasPaginas()
+¿  Cuando el usuario presiona el bot√≥n "Reset"                                                                      # StepDefinition.StepDefinitionLeave.presionarBotonReset(java.lang.String)
+π  Entonces los filtros deben recuperar sus valores predeterminados                                                 # StepDefinition.StepDefinitionLeave.validarValoresPredeterminados()
+∂  Y no deben permanecer los criterios ingresados anteriormente                                                     # StepDefinition.StepDefinitionLeave.validarCriteriosEliminados()
 
-@PIM @TC-005
-´Esquema del escenario: Search employees using all available PIM filters                                            # src/test/resources/features/orangehrm-pim.feature:75
+@LEAVE @TLEAVE-001
+§Esquema del escenario: Validar b√∫squeda de solicitudes con filtros combinados                                      # src/test/resources/features/leave.feature:44
 $Driver context -> Navegador:Chrome
 
 %Sistema Operativo :windows 11, 10.0
@@ -132,47 +180,154 @@
 
 Ã  Y que el usuario inicia sesi√≥n en OrangeHRM con el usuario "Admin" y la contrase√±a "admin123"                    # StepDefinition.OrangeHrmDefinition.iniciarSesion(java.lang.String,java.lang.String)
 
+B    Embedding [SUCCESS] Step ScreenShots [image/png 62623 bytes]
+
+≤  Y que el usuario ingresa al m√≥dulo LEAVE                                                                         # StepDefinition.StepDefinitionLeave.ingresarAlModuloLeave()
+
 A    Embedding [SUCCESS] Step ScreenShots [image/png 3638 bytes]
 
-∞  Y que el usuario ingresa al m√≥dulo PIM                                                                           # StepDefinition.OrangeHrmDefinition.ingresarAlModuloPim()
+BNo existen solicitudes de vacaciones para ejecutar la b√∫squeda.
+∏  Dado que existen solicitudes de vacaciones                                                                       # StepDefinition.StepDefinitionLeave.validarSolicitudesExistentes()
 
-B    Embedding [SUCCESS] Step ScreenShots [image/png 84390 bytes]
+B    Embedding [SUCCESS] Step ScreenShots [image/png 93588 bytes]
 
-—  Cuando the user enters employee name for combined filters "Linda"                                                # StepDefinition.OrangeHrmDefinition.ingresarNombreEmpleadoParaCombinacion(java.lang.String)
+¬  Y el usuario se encuentra en "Leave List"                                                                        # StepDefinition.StepDefinitionLeave.abrirSeccionSolicitada(java.lang.String)
 
-B    Embedding [SUCCESS] Step ScreenShots [image/png 83646 bytes]
+B    Embedding [SUCCESS] Step ScreenShots [image/png 96957 bytes]
 
-æ  Y the user enters employee id "0003"                                                                             # StepDefinition.OrangeHrmDefinition.ingresarIdEmpleado(java.lang.String)
+¿  Cuando ingresa la fecha inicial "2026-01-01"                                                                     # StepDefinition.StepDefinitionLeave.ingresarFechaInicial(java.lang.String)
 
-B    Embedding [SUCCESS] Step ScreenShots [image/png 86954 bytes]
+C    Embedding [SUCCESS] Step ScreenShots [image/png 110348 bytes]
 
-”  Y the user selects employment status for combined filters "Part-Time Contract"                                   # StepDefinition.OrangeHrmDefinition.seleccionarEstadoLaboralParaCombinacion(java.lang.String)
+æ  Y ingresa la fecha final "2026-12-31"                                                                            # StepDefinition.StepDefinitionLeave.ingresarFechaFinal(java.lang.String)
 
-B    Embedding [SUCCESS] Step ScreenShots [image/png 84571 bytes]
+C    Embedding [SUCCESS] Step ScreenShots [image/png 112332 bytes]
 
-”  Y the user selects include option for combined filters "Past Employees Only"                                     # StepDefinition.OrangeHrmDefinition.seleccionarOpcionIncludeParaCombinacion(java.lang.String)
+Ω  Y selecciona el estado "Taken"                                                                                   # StepDefinition.StepDefinitionLeave.seleccionarEstado(java.lang.String)
 
-B    Embedding [SUCCESS] Step ScreenShots [image/png 84509 bytes]
+B    Embedding [SUCCESS] Step ScreenShots [image/png 97505 bytes]
 
-”  Y the user selects job title for combined filters "Automation Tester"                                            # StepDefinition.OrangeHrmDefinition.seleccionarTituloTrabajoParaCombinacion(java.lang.String)
+¬  Y ingresa el nombre del empleado "QA Employee 03"                                                                # StepDefinition.StepDefinitionLeave.ingresarNombreEmpleado(java.lang.String)
 
-B    Embedding [SUCCESS] Step ScreenShots [image/png 84509 bytes]
+B    Embedding [SUCCESS] Step ScreenShots [image/png 99703 bytes]
 
-œ  Y the user selects sub unit for combined filters "Development"                                                   # StepDefinition.OrangeHrmDefinition.seleccionarSubUnidadParaCombinacion(java.lang.String)
+DNo se encontr√≥ el empleado 'QA Employee 03' en el autocompletado.
+ÇNo se pudo seleccionar el empleado 'QA Employee 03' en el autocompletado. Se contin√∫a con la validaci√≥n de resultados vac√≠os.
+Ω  Y selecciona al empleado desde el autocompletado                                                                 # StepDefinition.StepDefinitionLeave.seleccionarEmpleadoAutocompletado()
 
-B    Embedding [SUCCESS] Step ScreenShots [image/png 84751 bytes]
+B    Embedding [SUCCESS] Step ScreenShots [image/png 93785 bytes]
 
-–  Y the user selects supervisor for combined filters "Linda Brown"                                                 # StepDefinition.OrangeHrmDefinition.seleccionarSupervisorParaCombinacion(java.lang.String)
+Ω  Y selecciona la unidad "Administration"                                                                          # StepDefinition.StepDefinitionLeave.seleccionarUnidad(java.lang.String)
 
-B    Embedding [SUCCESS] Step ScreenShots [image/png 86525 bytes]
+B    Embedding [SUCCESS] Step ScreenShots [image/png 92475 bytes]
 
-≠  Y clicks Search                                                                                                  # StepDefinition.OrangeHrmDefinition.hacerClicEnSearch()
+AEl filtro Include Past Employees no est√° marcado en esta vista
+…  Y configura empleados anteriores en "Yes"                                                                        # StepDefinition.StepDefinitionLeave.configurarEmpleadosAnteriores(java.lang.String)
 
-B    Embedding [SUCCESS] Step ScreenShots [image/png 86738 bytes]
+B    Embedding [SUCCESS] Step ScreenShots [image/png 92475 bytes]
 
-úNo se encontr√≥ la combinaci√≥n de filtros probados. Valores inexistentes: Employee Name='Linda', Job Title='Automation Tester', Supervisor='Linda Brown'.
-¡  Entonces every result should match all selected criteria                                                         # StepDefinition.OrangeHrmDefinition.validarTodosLosCriteriosSeleccionados()
+INo se ejecuta la b√∫squeda porque no existen solicitudes de vacaciones.
+ª  Y presiona el bot√≥n "Search"                                                                                     # StepDefinition.StepDefinitionLeave.presionarBoton(java.lang.String)
+o      org.junit.AssumptionViolatedException: No existen solicitudes de vacaciones para ejecutar la b√∫squeda.
+U	at StepDefinition.StepDefinitionLeave.presionarBoton(StepDefinitionLeave.java:122)
+s	at ‚úΩ.presiona el bot√≥n "Search"(file:///C:/simpleTestAutomation/src/test/resources/features/leave.feature:24)
 
-B    Embedding [SUCCESS] Step ScreenShots [image/png 86738 bytes]
 
- Automation exit code: 0
+B    Embedding [SUCCESS] Step ScreenShots [image/png 92475 bytes]
+
+∂  Entonces se debe completar la b√∫squeda sin errores                                                               # StepDefinition.StepDefinitionLeave.validarBusquedaSinErrores()
+¥  Y se debe visualizar la tabla de resultados                                                                      # StepDefinition.StepDefinitionLeave.validarTablaDeResultados()
+»  Y las solicitudes deben corresponder al empleado "QA Employee 03"                                                # StepDefinition.StepDefinitionLeave.validarEmpleadoEnSolicitudes(java.lang.String)
+∆  Y las solicitudes deben cumplir el estado "Taken"                                                                # StepDefinition.StepDefinitionLeave.validarEstadoEnSolicitudes(java.lang.String)
+∏  Y las solicitudes deben estar dentro del per√≠odo consultado                                                      # StepDefinition.StepDefinitionLeave.validarPeriodoDeSolicitudes()
+∆  Y las solicitudes deben corresponder a la unidad "Administration"                                                # StepDefinition.StepDefinitionLeave.validarUnidadEnSolicitudes(java.lang.String)
+º  Y los registros deben respetar el filtro de empleados anteriores                                                 # StepDefinition.StepDefinitionLeave.validarFiltroEmpleadosAnteriores()
+∏  Y no deben existir registros duplicados                                                                          # StepDefinition.StepDefinitionLeave.validarRegistrosNoDuplicados()
+≥  Y todas las p√°ginas deben respetar los filtros aplicados                                                         # StepDefinition.StepDefinitionLeave.validarTodasLasPaginas()
+¿  Cuando el usuario presiona el bot√≥n "Reset"                                                                      # StepDefinition.StepDefinitionLeave.presionarBotonReset(java.lang.String)
+π  Entonces los filtros deben recuperar sus valores predeterminados                                                 # StepDefinition.StepDefinitionLeave.validarValoresPredeterminados()
+∂  Y no deben permanecer los criterios ingresados anteriormente                                                     # StepDefinition.StepDefinitionLeave.validarCriteriosEliminados()
+
+@LEAVE @TLEAVE-001
+§Esquema del escenario: Validar b√∫squeda de solicitudes con filtros combinados                                      # src/test/resources/features/leave.feature:45
+$Driver context -> Navegador:Chrome
+
+%Sistema Operativo :windows 11, 10.0
+
+Navegador :Chrome
+Chrome seleccionado
+PURL Actual: https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+¡  Dado que se abre el navegador y se navega a "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login" # StepDefinition.NavDefinition.abrirNavegadorParaOrangeHrm(java.lang.String)
+
+B    Embedding [SUCCESS] Step ScreenShots [image/png 48256 bytes]
+
+Ã  Y que el usuario inicia sesi√≥n en OrangeHRM con el usuario "Admin" y la contrase√±a "admin123"                    # StepDefinition.OrangeHrmDefinition.iniciarSesion(java.lang.String,java.lang.String)
+
+A    Embedding [SUCCESS] Step ScreenShots [image/png 3638 bytes]
+
+≤  Y que el usuario ingresa al m√≥dulo LEAVE                                                                         # StepDefinition.StepDefinitionLeave.ingresarAlModuloLeave()
+
+A    Embedding [SUCCESS] Step ScreenShots [image/png 3638 bytes]
+
+BNo existen solicitudes de vacaciones para ejecutar la b√∫squeda.
+∏  Dado que existen solicitudes de vacaciones                                                                       # StepDefinition.StepDefinitionLeave.validarSolicitudesExistentes()
+
+B    Embedding [SUCCESS] Step ScreenShots [image/png 92954 bytes]
+
+¬  Y el usuario se encuentra en "Leave List"                                                                        # StepDefinition.StepDefinitionLeave.abrirSeccionSolicitada(java.lang.String)
+
+B    Embedding [SUCCESS] Step ScreenShots [image/png 95953 bytes]
+
+¿  Cuando ingresa la fecha inicial "2026-01-01"                                                                     # StepDefinition.StepDefinitionLeave.ingresarFechaInicial(java.lang.String)
+
+C    Embedding [SUCCESS] Step ScreenShots [image/png 110494 bytes]
+
+æ  Y ingresa la fecha final "2026-12-31"                                                                            # StepDefinition.StepDefinitionLeave.ingresarFechaFinal(java.lang.String)
+
+C    Embedding [SUCCESS] Step ScreenShots [image/png 112349 bytes]
+
+Ω  Y selecciona el estado "Rejected"                                                                                # StepDefinition.StepDefinitionLeave.seleccionarEstado(java.lang.String)
+
+B    Embedding [SUCCESS] Step ScreenShots [image/png 97877 bytes]
+
+¬  Y ingresa el nombre del empleado "QA Employee 04"                                                                # StepDefinition.StepDefinitionLeave.ingresarNombreEmpleado(java.lang.String)
+
+C    Embedding [SUCCESS] Step ScreenShots [image/png 100008 bytes]
+
+DNo se encontr√≥ el empleado 'QA Employee 04' en el autocompletado.
+ÇNo se pudo seleccionar el empleado 'QA Employee 04' en el autocompletado. Se contin√∫a con la validaci√≥n de resultados vac√≠os.
+Ω  Y selecciona al empleado desde el autocompletado                                                                 # StepDefinition.StepDefinitionLeave.seleccionarEmpleadoAutocompletado()
+
+B    Embedding [SUCCESS] Step ScreenShots [image/png 94107 bytes]
+
+Ω  Y selecciona la unidad "Sales"                                                                                   # StepDefinition.StepDefinitionLeave.seleccionarUnidad(java.lang.String)
+
+B    Embedding [SUCCESS] Step ScreenShots [image/png 95439 bytes]
+
+AEl filtro Include Past Employees no est√° marcado en esta vista
+…  Y configura empleados anteriores en "No"                                                                         # StepDefinition.StepDefinitionLeave.configurarEmpleadosAnteriores(java.lang.String)
+
+B    Embedding [SUCCESS] Step ScreenShots [image/png 95439 bytes]
+
+INo se ejecuta la b√∫squeda porque no existen solicitudes de vacaciones.
+ª  Y presiona el bot√≥n "Search"                                                                                     # StepDefinition.StepDefinitionLeave.presionarBoton(java.lang.String)
+o      org.junit.AssumptionViolatedException: No existen solicitudes de vacaciones para ejecutar la b√∫squeda.
+U	at StepDefinition.StepDefinitionLeave.presionarBoton(StepDefinitionLeave.java:122)
+s	at ‚úΩ.presiona el bot√≥n "Search"(file:///C:/simpleTestAutomation/src/test/resources/features/leave.feature:24)
+
+
+B    Embedding [SUCCESS] Step ScreenShots [image/png 95439 bytes]
+
+∂  Entonces se debe completar la b√∫squeda sin errores                                                               # StepDefinition.StepDefinitionLeave.validarBusquedaSinErrores()
+¥  Y se debe visualizar la tabla de resultados                                                                      # StepDefinition.StepDefinitionLeave.validarTablaDeResultados()
+»  Y las solicitudes deben corresponder al empleado "QA Employee 04"                                                # StepDefinition.StepDefinitionLeave.validarEmpleadoEnSolicitudes(java.lang.String)
+∆  Y las solicitudes deben cumplir el estado "Rejected"                                                             # StepDefinition.StepDefinitionLeave.validarEstadoEnSolicitudes(java.lang.String)
+∏  Y las solicitudes deben estar dentro del per√≠odo consultado                                                      # StepDefinition.StepDefinitionLeave.validarPeriodoDeSolicitudes()
+∆  Y las solicitudes deben corresponder a la unidad "Sales"                                                         # StepDefinition.StepDefinitionLeave.validarUnidadEnSolicitudes(java.lang.String)
+º  Y los registros deben respetar el filtro de empleados anteriores                                                 # StepDefinition.StepDefinitionLeave.validarFiltroEmpleadosAnteriores()
+∏  Y no deben existir registros duplicados                                                                          # StepDefinition.StepDefinitionLeave.validarRegistrosNoDuplicados()
+≥  Y todas las p√°ginas deben respetar los filtros aplicados                                                         # StepDefinition.StepDefinitionLeave.validarTodasLasPaginas()
+¿  Cuando el usuario presiona el bot√≥n "Reset"                                                                      # StepDefinition.StepDefinitionLeave.presionarBotonReset(java.lang.String)
+π  Entonces los filtros deben recuperar sus valores predeterminados                                                 # StepDefinition.StepDefinitionLeave.validarValoresPredeterminados()
+∂  Y no deben permanecer los criterios ingresados anteriormente                                                     # StepDefinition.StepDefinitionLeave.validarCriteriosEliminados()
+ Automation exit code: 0

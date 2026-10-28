@@ -34,6 +34,7 @@ public class DriverManager {
                 }
                // WebDriverManager.chromedriver().browserVersion("147").setup();
                 configuracionChrome.addArguments("--remote-allow-origins=yes");
+                System.setProperty("selenium.manager.enabled", "false");
                 System.setProperty("webdriver.manager.verbose","true");
                 this.driver = new ChromeDriver(configuracionChrome);
                 this.driver.manage().deleteAllCookies();
